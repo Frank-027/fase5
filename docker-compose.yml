@@ -29,7 +29,7 @@ services:
       MYSQL_USER: cansatuser
       MYSQL_PASSWORD: SkyByte26
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - mariadb_data:/var/lib/mysql
       - ./mariadb/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
@@ -61,7 +61,7 @@ services:
     image: eclipse-mosquitto:2
     container_name: mosquitto
     ports:
-      - "1883:1883"
+      - "1884:1883"
     volumes:
       - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
     networks:

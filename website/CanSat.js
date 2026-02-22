@@ -1,5 +1,11 @@
 // Verbind met websocket server
-const socket = new WebSocket("ws://localhost:8765");
+// Dynamisch IP of hostname van de server bepalen
+const host = window.location.hostname;
+const port = 8765;
+
+// WebSocket openen per http of https protocol
+const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
+const socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/`);
 
 socket.onopen = function() {
     console.log("Verbonden met WebSocket server");
